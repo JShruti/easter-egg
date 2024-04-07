@@ -1,0 +1,83 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f3f3;
+  font-family: 'Roboto', sans-serif;
+}
+
+.easterButton {
+  position: relative;
+  background-color: #ffcbdb;
+  border: none;
+  border-radius: 50%;
+  width: 150px;
+  height: 200px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  transform: translateY(25%);
+}
+
+.easterButton .label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.easterButton .bunny {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-image: url('https://emojicdn.elk.sh/🐰?style=twitter');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
+
+
+.easterButton:hover .bunny {
+  opacity: 1;
+}
+
+
+
+.easterButton.easterEgg {
+  background-color: #a7e8fc;
+}
+
+.easterButton .label {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.easterButton:hover .label {
+  opacity: 0;
+}
+
+.confetti {
+  position: absolute;
+  width: 15px;
+  height: 20px;
+  background-color: #ffcbdb;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: confetti-fall 5s linear forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
